@@ -11,7 +11,7 @@
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark"> <!-- <-- Setting for the navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- <-- Setting for the navigation bar -->
 		<a class="navbar-brand" href="index.html"><img src="img/URF_logo.png" width="50" height="50"> UrbanResourceFinder</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -26,9 +26,16 @@
 				<li class="nav-item">
 					<a class="nav-link" href="about.html">About</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a class="nav-link" href="#">Map</a>
-				</li>
+				</li> -->
+				<li class="nav-item dropdown bg-dark">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Map</a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			        <a class="dropdown-item" href="#">Map</a>
+			        <a class="dropdown-item" href="test_map.html">Test Map 1</a>
+			        </div>
+		      	</li>
 			</ul>
 		</div>
 	</nav>
@@ -37,7 +44,7 @@
 	<h1 style="text-align: center;">Welcome to UrbanResourceFinder</h1>
 	<!-- Logo -->
 	<div class="text-center">
-		<img src="img/URF_logo.png" alt="UrbanResourceFinder Logo" class="rounded">
+		<img src="img/URF_logo.png" alt="UrbanResourceFinder Logo" class="img-fluid rounded">
 		<br><br>
 		<a class="btn btn-success btn-lg" href="#" role="button">Get started</a>
 	</div>
