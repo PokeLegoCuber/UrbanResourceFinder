@@ -1,14 +1,14 @@
-//Map takes (Lat,Lng)
+//Map takes .setView([Lat, Lng], zoomlevel);
 var mymap = L.map('mapid').setView([40.631229, -73.952558], 19);
 
-// Credit OpenStreetMap(OSM)
+// Crediting OpenStreetMap(OSM) for tiles
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 //Tiling is basically the skin of the map
-//In the case we're using the default OSM and storing it in tileURL
+//In this case we're using the default OSM one and storing it in tileURL
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 
-//tilerLayer takes in URL and object
+//tilerLayer takes in URL and an object
 const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(mymap);
 
