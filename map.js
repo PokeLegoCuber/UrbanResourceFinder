@@ -131,17 +131,17 @@ async function loadWiFi()
 	for(i = 0; i<data.length; i++)
 	{
 		
-		let loc_msg = "<b>Location:</b>"+data[i].name;
-		let name_msg = "<b>Wi-Fi Name:</b>"+data[i].ssid;
-		let type_msg = "<b>Type:</b>"+data[i].type;
+		let loc_msg = "<b>Location:</b> "+data[i].name;
+		let name_msg = "<b>Wi-Fi Name:</b> "+data[i].ssid;
+		let type_msg = "<b>Type:</b> "+data[i].type;
 		let detail_msg;
 		if(data[i].remarks == undefined)
 		{
-			detail_msg = "<b>Details:</b>There are no details";
+			detail_msg = "<b>Details:</b> There are no details";
 		}
 		else
 		{
-			detail_msg = "<b>Details:</b>" + data[i].remarks;
+			detail_msg = "<b>Details:</b> " + data[i].remarks;
 		}
 		let lat = data[i].location_lat_long.latitude;
 		let long = data[i].location_lat_long.longitude;
@@ -180,17 +180,17 @@ async function loadRecycle()
 
 	for(i = 0; i <data.length; i++)
 	{
-		let loc_msg= "Location: " + data[i].park_site_name;
+		let loc_msg = "<b>Location:</b> " + data[i].park_site_name;
 		let address_msg;
 		if(data[i].address == undefined)
 		{
-			address_msg = "Address: No specified address";
+			address_msg = "<b>Address:</b> No specified address";
 		}
 		else
 		{
-			address_msg = "Address: " + data[i].address;
+			address_msg = "<b>Address:</b> " + data[i].address;
 		}
-		let site_msg = "Site Type: " + data[i].site_type;
+		let site_msg = "<b>Site Type:</b> " + data[i].site_type;
 		let lat = data[i].latitude;
 		let long = data[i].longitude;
 		L.marker([lat, long] , {icon:recycleIcon}).bindPopup(loc_msg +"<br>"+ address_msg +"<br>"+ site_msg).addTo(recycleLayer);
