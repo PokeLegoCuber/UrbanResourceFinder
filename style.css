@@ -1,3 +1,9 @@
+h1
+{
+	text-align: center;
+}
+
+/*For about page*/
 .carousel-control-next-icon
 {
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
@@ -17,4 +23,34 @@
 .carousel-item img
 {
 	margin: auto;
+}
+
+/*For map page*/
+
+/* default color for all states not specified below */
+.state 
+{
+	fill:#28a745
+}                        
+/* color and width of borders between states */
+.borders 
+{
+	stroke:#000000; 
+	stroke-width:1;
+}    
+/* set opacity to 0 to hide the DC circle, or 1 to show it */
+.DCcircle 
+{
+	opacity:1;
+}                        
+/* color and width of lines around Alaska and Hawaii */
+.separator 
+{
+	stroke:#B0B0B0; 
+	stroke-width:2;
+} 
+
+path:hover
+{
+	fill: #218838;
 }

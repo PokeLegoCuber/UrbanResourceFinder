@@ -24,7 +24,7 @@ var recycleLayer = L.layerGroup();
 
 //Creating icon
 var fountainIcon = L.icon({
-	iconUrl: 'img/fountain.png',
+	iconUrl: '../img/fountain.png',
 
     iconSize:     [32 , 32], // size of the icon
     iconAnchor:   [16 , 32], // point of the icon which will correspond to marker's location. Also the center point
@@ -32,7 +32,7 @@ var fountainIcon = L.icon({
 });
 
 var wifiIcon = L.icon({
-	iconUrl: 'img/wifi.png',
+	iconUrl: '../img/wifi.png',
 
     iconSize:     [32 , 25], // size of the icon
     iconAnchor:   [16 , 25], // point of the icon which will correspond to marker's location. Also the center point
@@ -40,7 +40,7 @@ var wifiIcon = L.icon({
 });
 
 var recycleIcon = L.icon({
-	iconUrl: 'img/recycle.png',
+	iconUrl: '../img/recycle.png',
 
     iconSize:     [32 , 31], // size of the icon
     iconAnchor:   [16 , 31], // point of the icon which will correspond to marker's location. Also the center point
@@ -48,7 +48,7 @@ var recycleIcon = L.icon({
 });
 
 var personIcon = L.icon({
-	iconUrl: 'img/person.png',
+	iconUrl: '../img/person.png',
 
     iconSize:     [32 , 36], // size of the icon
     iconAnchor:   [16 , 36], // point of the icon which will correspond to marker's location. Also the center point
