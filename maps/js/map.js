@@ -1,5 +1,5 @@
 //.fitWorld(), Sets a map view that mostly contains the whole world with the maximum zoom level possible
-var mymap = L.map('URFmap').fitWorld();
+var mymap = L.map('URFmap', {fullscreenControl: true}).fitWorld();
 
 // Crediting OpenStreetMap(OSM) for tiles
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
