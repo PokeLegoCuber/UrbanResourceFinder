@@ -16,11 +16,13 @@ tiles.addTo(mymap);
 const fountainURL = 'https://data.cityofnewyork.us/api/views/bevm-apmm/rows.json';
 const wifiURL = 'https://data.cityofnewyork.us/resource/yjub-udmw.json';
 const recycleURL = 'https://data.cityofnewyork.us/resource/sxx4-xhzg.json';
+const autotoiletURL = 'https://data.cityofnewyork.us/api/views/7z3a-ched/rows.json';
 
 //Declaring layer variables
 var fountainLayer = L.layerGroup();
 var wifiLayer = L.layerGroup();
 var recycleLayer = L.layerGroup();
+var autotoiletLayer = L.layerGroup();
 
 //Creating icon
 var fountainIcon = L.icon({
@@ -41,6 +43,14 @@ var wifiIcon = L.icon({
 
 var recycleIcon = L.icon({
 	iconUrl: '../img/recycle.png',
+
+    iconSize:     [32 , 31], // size of the icon
+    iconAnchor:   [16 , 31], // point of the icon which will correspond to marker's location. Also the center point
+    popupAnchor:  [0 , -31] // point from which the popup should open relative to the iconAnchor
+});
+
+var autotoiletIcon = L.icon({
+	iconUrl: '../img/autotoilet.png',
 
     iconSize:     [32 , 31], // size of the icon
     iconAnchor:   [16 , 31], // point of the icon which will correspond to marker's location. Also the center point
@@ -213,15 +223,66 @@ async function loadRecycle()
 	// 	console.log("Longitude: " + data[i].longitude);
 	// }
 }
+async function loadAutoToilet() 
+{
+	let response = await fetch(autotoiletURL);
+	let data = await response.json();
+	
+	for(i = 0; i < data.data.length; i++)
+	{
+		//This finds the position of where the substring of Latitude begins and ends
+		let lat_start = data.data[i][10].indexOf(" 4") + 1;
+		let lat_end = data.data[i][10].indexOf(")");
+
+		//This finds the position of where the substring of Longitude begins and ends
+		let long_start = data.data[i][10].indexOf("-7");
+		let long_end = data.data[i][10].indexOf(" 4");
+
+		let lat = data.data[i][10].substring(lat_start , lat_end);
+		let long = data.data[i][10].substring(long_start , long_end);
+
+		let loc_msg = ("<b>Location:</b> " + data.data[i][14]);
+		let address_msg = ("<b>Street:</b> " + data.data[i][17]);
+
+		L.marker([lat, long] , {icon:autotoiletIcon}).bindPopup(loc_msg +"<br>"+ address_msg).addTo(autotoiletLayer);
+	}
+
+	// Debugging Purposes
+	// console.log(data.data.length);
+	// for(i = 0; i < data.data.length; i++)
+	// {
+	// 	//This finds the position of where the substring of Latitude begins and ends
+	// 	let lat_start = data.data[i][10].indexOf(" 4") + 1;
+	// 	let lat_end = data.data[i][10].indexOf(")");
+
+	// 	//This finds the position of where the substring of Longitude begins and ends
+	// 	let long_start = data.data[i][10].indexOf("-7");
+	// 	let long_end = data.data[i][10].indexOf(" 4");
+
+	// 	let lat = data.data[i][10].substring(lat_start , lat_end);
+	// 	let long = data.data[i][10].substring(long_start , long_end);
+
+	// 	console.log(i);
+	// 	console.log("Location: " + data.data[i][14]);
+	// 	console.log("Street: " + data.data[i][17]);
+	// 	console.log("Coords: " + data.data[i][10]);
+	// 	console.log("Lat: " + lat);
+	// 	console.log("Long: " + long);
+	// }
+
+}
+
 // Preloads the assets into the layers
 loadFountain();
 loadWiFi();
 loadRecycle();
+loadAutoToilet(); 
 
 var overlayMaps = {
+	"Auto Toilet &#x1F916": autotoiletLayer,
     "Fountains &#x1F6B0": fountainLayer,
-    "Wi-Fi &#x1F4E1": wifiLayer,
-    "Recycling Bin &#x267B": recycleLayer
+    "Recycling Bin &#x267B": recycleLayer,
+    "Wi-Fi &#x1F4E1": wifiLayer
 };
 
 
