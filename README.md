@@ -16,9 +16,17 @@ Built with:
 
 [BootStrap](https://getbootstrap.com/)
 
-[NYC Open Data](https://opendata.cityofnewyork.us/)
-
 [Leaflet](https://leafletjs.com/)
+
+Open Data Sets:
+
+- [NYC Open Data](https://opendata.cityofnewyork.us/)
+	- [Automatic Public Toilets](https://data.cityofnewyork.us/dataset/Automatic-Public-Toilets/uzgy-xh4j)
+	- [NYC Parks Drinking Fountains](https://data.cityofnewyork.us/Environment/NYC-Parks-Drinking-Fountains/622h-mkfu)
+	- [Public Recycling Bins](https://data.cityofnewyork.us/Environment/Public-Recycling-Bins/sxx4-xhzg)
+	- [NYC Wi-Fi Hotspot Locations](https://data.cityofnewyork.us/City-Government/NYC-Wi-Fi-Hotspot-Locations/yjub-udmw)
+	- [MTA Wi-Fi Locations](https://data.ny.gov/Transportation/MTA-Wi-Fi-Locations/pwa9-tmie)
+
 
 Assets were provided by:
 
